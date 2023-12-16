@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_all_arbeitskartes",
+  "info": {
+    "displayName": "Taetigkeit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Beschreibung": {
+      "type": "text",
+      "required": true
+    },
+    "Bild": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

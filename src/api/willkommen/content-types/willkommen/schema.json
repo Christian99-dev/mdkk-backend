@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "willkommens",
+  "info": {
+    "singularName": "willkommen",
+    "pluralName": "willkommens",
+    "displayName": "Willkommen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titel": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "text",
+      "required": true
+    },
+    "Nummer": {
+      "type": "string",
+      "required": true
+    },
+    "ButtonLinks": {
+      "type": "string",
+      "required": true
+    },
+    "ButtonRechts": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

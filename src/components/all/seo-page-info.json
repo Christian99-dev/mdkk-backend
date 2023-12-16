@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_all_seo_page_infos",
+  "info": {
+    "displayName": "SeoPageInfo"
+  },
+  "options": {},
+  "attributes": {
+    "SeitenTitel": {
+      "type": "string",
+      "required": true
+    },
+    "SeitenBeschreibung": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

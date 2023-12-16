@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "arbeits",
+  "info": {
+    "singularName": "arbeit",
+    "pluralName": "arbeits",
+    "displayName": "Arbeit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titel": {
+      "type": "string",
+      "required": true
+    },
+    "Untertitel": {
+      "type": "string",
+      "required": true
+    },
+    "Taetigkeiten": {
+      "type": "component",
+      "repeatable": true,
+      "component": "all.arbeitskarte",
+      "required": true,
+      "min": 3
+    }
+  }
+}
