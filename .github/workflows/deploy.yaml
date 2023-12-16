@@ -27,7 +27,7 @@ jobs:
       run: mv .env.example .env
 
     - name: 📝 Create Environment Variables
-      run: |npm 
+      run: |
         echo "DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }}" >> .env
         echo "DATABASE_HOST=${{ secrets.DATABASE_HOST }}" >> .env
         echo "DATABASE_PORT=${{ secrets.DATABASE_PORT }}" >> .env
