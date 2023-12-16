@@ -1,0 +1,59 @@
+name: 🚀 Build and Deploy Strapi App
+
+on:
+  push:
+    branches:
+      - production  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📦 Checkout Repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: 📌 Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: ⚙️ Install Dependencies
+      run: npm install
+
+    - name: 📝 Pull in Environment Variables File
+      run: mv .env.example .env
+
+    - name: 📝 Create Environment Variables
+      run: |npm 
+        echo "DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }}" >> .env
+        echo "DATABASE_HOST=${{ secrets.DATABASE_HOST }}" >> .env
+        echo "DATABASE_PORT=${{ secrets.DATABASE_PORT }}" >> .env
+        echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env
+        echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
+        echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+        echo "DATABASE_SSL=${{ secrets.DATABASE_SSL }}" >> .env
+        echo "GIT_PAT=${{ secrets.GIT_PAT }}" >> .env
+
+
+    - name: 🏗️ Build Strapi App for Production
+      run: NODE_ENV=production npm run build  
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secrets.FTP_PORT }}
+        protocol: ftps
+        server-dir: "strapi/"
+        exclude: |
+          **/.cache
+          **/.cache/**
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/*.log

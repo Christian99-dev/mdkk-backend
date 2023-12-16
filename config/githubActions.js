@@ -1,5 +1,5 @@
 const settings = {
-  repo: "fischer-frontend",
+  repo: "mdkk-frontend",
   user: "Christian99-dev",
   event_types: ["strapi-staging", "strapi-production"],
   token: process.env.GIT_PAT,
