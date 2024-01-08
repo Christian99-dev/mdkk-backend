@@ -696,6 +696,7 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
       Attribute.SetMinMax<{
         min: 1;
       }>;
+    Bild: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -26,6 +26,14 @@
       "component": "all.text",
       "min": 1,
       "required": true
+    },
+    "Bild": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
