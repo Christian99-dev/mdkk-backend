@@ -882,6 +882,7 @@ export interface ApiWillkommenWillkommen extends Schema.SingleType {
     singularName: 'willkommen';
     pluralName: 'willkommens';
     displayName: 'Willkommen';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -892,6 +893,7 @@ export interface ApiWillkommenWillkommen extends Schema.SingleType {
     Nummer: Attribute.String & Attribute.Required;
     ButtonLinks: Attribute.String & Attribute.Required;
     ButtonRechts: Attribute.String & Attribute.Required;
+    Hintergrund: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
